@@ -24,3 +24,8 @@ mongoose.connection
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+
+// Express Listener
+app.listen(PORT, () => {
+    console.log.apply(`Express is listening on PORT: ${PORT}`);
+});
