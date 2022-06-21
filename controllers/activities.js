@@ -13,12 +13,19 @@ activityRouter.get("/activity", async (req,res) => {
     }
 });
 
-
-// New
-// Delete
-// Update
 // Create
-// Edit
-// Show
+activityRouter.post("/activity", async (req,res) => {
+    try {
+        const activity = await Activity.create(req.body);
+        res.json(activity);
+    } catch (error) {
+        console.log("error:", error);
+        res.json({ error: "Something Went Wrong - Check Console" });
+    }
+});
+
+// Update
+// Delete
+
 
 module.exports = activityRouter;
