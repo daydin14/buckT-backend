@@ -13,12 +13,37 @@ activityRouter.get("/activity", async (req,res) => {
     }
 });
 
-
-// New
-// Delete
-// Update
 // Create
-// Edit
-// Show
+activityRouter.post("/activity", async (req,res) => {
+    try {
+        const activity = await Activity.create(req.body);
+        res.json(activity);
+    } catch (error) {
+        console.log("error:", error);
+        res.json({ error: "Something Went Wrong - Check Console" });
+    }
+});
+
+// Update
+activityRouter.put("/activity/:id", async (req, res) => {
+    try {
+        res.json(
+            await Activity.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        );
+    } catch (error) {
+        console.log("error:", error);
+        res.json({ error: "Something Went Wrong - Check Console" });
+    }
+});
+
+// Delete
+activityRouter.delete("/activity/:id", async (req, res) => {
+    try {
+        res.json(await Activity.findByIdAndDelete(req.params.id));
+    } catch (error) {
+        console.log("error:", error);
+        res.json({ error: "Something Went Wrong - Check Console" });
+    }
+})
 
 module.exports = activityRouter;
