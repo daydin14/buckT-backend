@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const activitySchema = new mongoose.Schema({
   img: String,
   title: String,
-  describtion: String
+  description: String,
 });
 
-const Activity = mongoose.model('Activity', activitySchema);
+const Activity = mongoose.model("Activity", activitySchema);
 
 module.exports = Activity;

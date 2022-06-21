@@ -21,19 +21,16 @@ mongoose.connect(MONGODB_URL);
 
 // Mongo Status Listeners
 mongoose.connection
-    .on("connected", () => console.log("Connected to MongoDB"))
-    .on("close", () => console.log("Disconnected from MongoDB"))
-    .on("error", (error) => console.log(`Error with MongoDB: ${error}`));
+  .on("connected", () => console.log("Connected to MongoDB"))
+  .on("close", () => console.log("Disconnected from MongoDB"))
+  .on("error", (error) => console.log(`Error with MongoDB: ${error}`));
 
 // Mount MiddleWare
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use(seedPlanter); // Controller MiddleWare
-
 // Express Listener
 app.listen(PORT, () => {
-    console.log.apply(`Express is listening on PORT: ${PORT}`);
+  console.log.apply(`Express is listening on PORT: ${PORT}`);
 });
-
