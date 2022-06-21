@@ -35,7 +35,15 @@ activityRouter.put("/activity/:id", async (req, res) => {
         res.json({ error: "Something Went Wrong - Check Console" });
     }
 });
-// Delete
 
+// Delete
+activityRouter.delete("/activity/:id", async (req, res) => {
+    try {
+        res.json(await Activity.findByIdAndDelete(req.params.id));
+    } catch (error) {
+        console.log("error:", error);
+        res.json({ error: "Something Went Wrong - Check Console" });
+    }
+})
 
 module.exports = activityRouter;
