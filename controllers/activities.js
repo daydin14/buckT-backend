@@ -25,6 +25,16 @@ activityRouter.post("/activity", async (req,res) => {
 });
 
 // Update
+activityRouter.put("/activity/:id", async (req, res) => {
+    try {
+        res.json(
+            await Activity.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        );
+    } catch (error) {
+        console.log("error:", error);
+        res.json({ error: "Something Went Wrong - Check Console" });
+    }
+});
 // Delete
 
 
