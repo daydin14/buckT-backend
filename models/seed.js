@@ -20,13 +20,3 @@ module.exports = [
         description: "N/A",
     },
 ];
-/*
-Need to figure out how our schema will look 
-
-img
-location
-activity
-description
-
-
-*/
