@@ -1,21 +1,21 @@
 module.exports = [
     {
-        location: "Hawaii",
+        title: "Hawaii",
         img: "",
         description: "Islands west of the USA mainland.",
     },
     {
-        location: "Italy",
+        title: "Italy",
         img: "",
         description: "Famous boot with amazing food and wine.",
     },
     {
-        location: "Mexico",
+        title: "Mexico",
         img: "",
         description: "Senior Frogs",
     },
     {
-        location: "TBD",
+        title: "TBD",
         img: "",
         description: "N/A",
     },
