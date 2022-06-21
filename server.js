@@ -4,6 +4,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
 
+// Controllers
+const seedPlanter = require("./controllers/seeds");
+const activitiesController = require("./controllers/activities");
+const locationsController = require("./controllers/locations");
+
 // Initialize Express App
 const app = express();
 
@@ -20,10 +25,12 @@ mongoose.connection
     .on("close", () => console.log("Disconnected from MongoDB"))
     .on("error", (error) => console.log(`Error with MongoDB: ${error}`));
 
-// Mount Middelware
+// Mount MiddleWare
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use(seedPlanter); // Controller MiddleWare
 
 // Express Listener
 app.listen(PORT, () => {
