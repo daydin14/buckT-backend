@@ -30,6 +30,11 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
+// Controllers MiddleWare
+app.use(seedPlanter);
+app.use(activitiesController);
+app.use(locationsController);
+
 // Express Listener
 app.listen(PORT, () => {
   console.log.apply(`Express is listening on PORT: ${PORT}`);
