@@ -5,7 +5,8 @@ const Location = require("../models/location");
 // Index
 locationRouter.get("/location", async (req, res) => {
   try {
-    res.json(await Location.find({}));
+    const location = await Location.find({});
+    res.json(location);
   } catch (error) {
     console.log("error:", error);
     res.json({ error: "Something Went Wrong - Check Console" });
@@ -15,7 +16,8 @@ locationRouter.get("/location", async (req, res) => {
 // Create
 locationRouter.post("/location", async (req, res) => {
   try {
-    res.json(await Location.create(req, body));
+    const location = await Location.create(req, body);
+    res.json(location);
   } catch (error) {
     console.log("error", error);
     res.json({ error: "someething went wrong - check console" });

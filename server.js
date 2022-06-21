@@ -35,6 +35,11 @@ app.use(seedPlanter);
 app.use(activitiesController);
 app.use(locationsController);
 
+// Route
+app.get("/", (req, res) => {
+  res.send("Greetings Traveler");
+});
+
 // Express Listener
 app.listen(PORT, () => {
   console.log.apply(`Express is listening on PORT: ${PORT}`);
