@@ -16,7 +16,7 @@ locationRouter.get("/location", async (req, res) => {
 // Create
 locationRouter.post("/location", async (req, res) => {
   try {
-    const location = await Location.create(req, body);
+    const location = await Location.create(req.body);
     res.json(location);
   } catch (error) {
     console.log("error", error);
