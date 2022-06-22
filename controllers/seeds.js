@@ -20,9 +20,8 @@ seedRouter.get("/seed/plant", async (req, res) => {
   seedData.deleteMany({}, (error, allSeeds) => {});
 
   seedData.create(Seed, (error, Seed) => {
-    const plants = res.json(Seed);
-    res.send(plants);
-  })
-})
+    res.send("Seed Data Planted");
+  });
+});
 
 module.exports = seedRouter;
