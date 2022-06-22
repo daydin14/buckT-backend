@@ -16,13 +16,13 @@ seedRouter.get("/seed", async (req, res) => {
 });
 
 // Seed Planter
-// seedRouter.post("/seed/plant", async (req, res) => {
-  
+seedRouter.get("/seed/plant", async (req, res) => {
+  seedData.deleteMany({}, (error, allSeeds) => {});
 
-//   seedData.create(Seed, (error, Seed) => {
-//     res.redirect("/seed");
-//     console.log("Planted");
-//   })
-// })
+  seedData.create(Seed, (error, Seed) => {
+    res.redirect("/seed");
+    console.log("Planted");
+  })
+})
 
 module.exports = seedRouter;
