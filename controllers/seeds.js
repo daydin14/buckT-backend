@@ -12,7 +12,7 @@ const seedData = mongoose.model("Seed", seedSchema);
 
 // Seed Viewer?
 seedRouter.get("/seed", async (req, res) => {
-  res.send("Seed data code has been commented out");
+  res.send("Seed data home page");
 });
 
 // Seed Planter
@@ -21,7 +21,6 @@ seedRouter.get("/seed/plant", async (req, res) => {
 
   seedData.create(Seed, (error, Seed) => {
     res.redirect("/seed");
-    console.log("Planted");
   })
 })
 
