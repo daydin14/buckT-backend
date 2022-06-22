@@ -12,19 +12,17 @@ const seedData = mongoose.model("Seed", seedSchema);
 
 // Seed Viewer?
 seedRouter.get("/seed", async (req, res) => {
-  res.send("Seed Data Home Page");
+  res.send("Seed data code has been commented out");
 });
 
 // Seed Planter
-seedRouter.post("/seed/plant", async (req, res) => {
-  seedData.deleteMany({}, (error, allSeeds) => {});
+// seedRouter.post("/seed/plant", async (req, res) => {
+  
 
-  seedData.create(Seed, (error, Seed) => {
-    res.redirect("/seed");
-    console.log("Planted");
-  })
-})
+//   seedData.create(Seed, (error, Seed) => {
+//     res.redirect("/seed");
+//     console.log("Planted");
+//   })
+// })
 
 module.exports = seedRouter;
-
-
