@@ -37,7 +37,7 @@ locationRouter.put("/location/:id", async (req, res) => {
 });
 
 // Delete
-locationRouter.delete("/locaiton/:id", async (req, res) => {
+locationRouter.delete("/location/:id", async (req, res) => {
   try {
     res.json(await Location.findByIdAndDelete(req.params.id));
   } catch (error) {
