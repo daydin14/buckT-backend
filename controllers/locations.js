@@ -19,8 +19,8 @@ locationRouter.post("/location", async (req, res) => {
     const location = await Location.create(req.body);
     res.json(location);
   } catch (error) {
-    console.log("error", error);
-    res.json({ error: "someething went wrong - check console" });
+    console.log("error:", error);
+    res.json({ error: "Something Went Wrong - Check Console" });
   }
 });
 
@@ -31,8 +31,8 @@ locationRouter.put("/location/:id", async (req, res) => {
       await Location.findByIdAndUpdate(req.params.id, req.body, { new: true })
     );
   } catch (error) {
-    console.log("error", error);
-    res.json({ error: "someething went wrong - check console" });
+    console.log("error:", error);
+    res.json({ error: "Something Went Wrong - Check Console" });
   }
 });
 
@@ -41,8 +41,8 @@ locationRouter.delete("/location/:id", async (req, res) => {
   try {
     res.json(await Location.findByIdAndDelete(req.params.id));
   } catch (error) {
-    console.log("error", error);
-    res.json({ error: "someething went wrong - check console" });
+    console.log("error:", error);
+    res.json({ error: "Something Went Wrong - Check Console" });
   }
 });
 
