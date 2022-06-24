@@ -6,7 +6,7 @@ ___
 <h2>What is BuckT??</h2>
 
 <h3 >
-  Buck-T is a app designed to cataogue all of your bucket list activities and destinations into one inspiring travel wish-list.
+  Buck-T is a app designed to catalogue all of your bucket list activities and destinations into one inspiring travel wish-list.
 </h3>
 <h4>
   How does it work?
