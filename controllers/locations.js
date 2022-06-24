@@ -47,3 +47,4 @@ locationRouter.delete("/location/:id", async (req, res) => {
 });
 
 module.exports = locationRouter;
+

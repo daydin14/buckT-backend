@@ -9,14 +9,18 @@ const seedSchema = new mongoose.Schema({
   description: String,
 });
 const seedData = mongoose.model("Seed", seedSchema);
-module.exports = seedData;
+
+// Seed Viewer?
+seedRouter.get("/seed", async (req, res) => {
+  res.send("Seed data home page");
+});
 
 // Seed Planter
-seedRouter.get("/seed", (req, res) => {
-  Seed.deleteMany({}, (error, fullList) => {});
+seedRouter.get("/seed/plant", async (req, res) => {
+  seedData.deleteMany({}, (error, allSeeds) => {});
 
-  Seed.create(Seed, (error, data) => {
-    res.redirect("/");
+  seedData.create(Seed, (error, Seed) => {
+    res.send("Seed Data Planted");
   });
 });
 
